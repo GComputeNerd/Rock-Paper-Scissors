@@ -8,6 +8,33 @@ let moveMatrix = ["Rock", "Paper", "Scissors"]
 
 resultText = document.querySelector("p.result");
 scoreText = document.querySelector("p.score");
+nRounds = 5;
+
+roundsText = document.querySelector(".nRounds .count");
+nRoundsInc = document.querySelector(".nRounds .plus");
+nRoundsDec = document.querySelector(".nRounds .minus");
+
+document.querySelector(".launch .outerCircle").onclick = () => switchPage(".launch", ".nRounds");
+document.querySelector(".nRounds h1").onclick = () => switchPage(".nRounds", ".launch");
+
+nRoundsInc.onclick = () => updateCount(1);
+nRoundsDec.onclick = () => updateCount(-1);
+
+function switchPage(curr, next) {
+    document.querySelector(curr).style.display = "none";
+    document.querySelector(next).style.display = "flex";
+}
+
+function updateCount(inc) {
+    if (inc == -1 && nRounds == 1) {
+        inc = 0
+    } else if (inc == 1 && nRounds == 10) {
+        inc = 0
+    }
+
+    nRounds += inc;
+    roundsText.innerHTML = nRounds;
+}
 
 function getComputerChoice() {
     let choice = Math.random();
