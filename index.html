@@ -8,18 +8,27 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    .
-    <div class="game">
-        <p class="choice">Choose :</p>
-        <div class="buttons">
-            <button onclick="playGame(0);">Rock</button>
-            <button onclick="playGame(1);">Paper</button>
-            <button onclick="playGame(2);">Scissors</button>
+    <div class="main">
+        <div class="launch">
+            <h1>ROCK, PAPER, SCISSORS</h1>
+            <div class="outerCircle">
+                <div class="innerCircle">
+                    <img src="img/Rock.png" alt="Rock Image">
+                </div>
+            </div>
         </div>
-        <p class="result">...</p>
-        <p class="score">0 - 0</p>
-    </div>
 
+        <div class="game">
+            <p class="choice">Choose :</p>
+            <div class="buttons">
+                <button onclick="playGame(0);">Rock</button>
+                <button onclick="playGame(1);">Paper</button>
+                <button onclick="playGame(2);">Scissors</button>
+            </div>
+            <p class="result">...</p>
+            <p class="score">0 - 0</p>
+        </div>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>
