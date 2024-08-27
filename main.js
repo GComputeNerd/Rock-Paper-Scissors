@@ -7,6 +7,7 @@ let gameMatrix = [
 let moveMatrix = ["Rock", "Paper", "Scissors"]
 
 resultText = document.querySelector("p.result");
+scoreText = document.querySelector("p.score");
 
 function getComputerChoice() {
     let choice = Math.random();
@@ -20,6 +21,20 @@ function getComputerChoice() {
     }
 }
 
+function updateScore(winner) {
+    score = scoreText.innerHTML.split(" ");
+    playerScore = parseInt(score[0]);
+    computerScore = parseInt(score[2]);
+
+    if (result == 1) {
+        playerScore += 1;
+    } else if (result == -1) {
+        computerScore += 1;
+    }
+
+    scoreText.innerHTML = playerScore.toString() + " - " + computerScore.toString();
+}
+
 function playGame(playerChoice) {
     computerChoice = getComputerChoice();
     result = gameMatrix[playerChoice][computerChoice];
@@ -29,7 +44,9 @@ function playGame(playerChoice) {
         resultText.innerHTML = resHTML + " = DRAW!";
     } else if (result == 1) {
         resultText.innerHTML = resHTML + " = WIN!";
+        updateScore(1);
     } else {
         resultText.innerHTML = resHTML + " = LOSE!";
+        updateScore(-1);
     }
 }
