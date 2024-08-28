@@ -28,8 +28,8 @@ h1 {
 
 .buttons {
     display: flex;
-    gap: 1em;
-    justify-content: center;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .main {
@@ -99,7 +99,21 @@ h1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
 
+.nRounds button {
+    font-family: Roboto;
+    background-color: #2E7D32;
+    border: none;
+    border-radius: 0.5em 0.5em;
+    color: white;
+    padding: 0.25em 0.5em;
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 15%;
+}
+.nRounds button:hover {
+    cursor: pointer;
 }
 
 .nSelect {
@@ -138,15 +152,128 @@ h1 {
     position: absolute;
     left: 5em;
 }
+
 .nRounds {
     display: none;
 }
+
+/* .launch {
+    display: none;
+} */
 
 .game {
     width: 100%;
     height: 100%;
     display: none;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+}
+
+.roundNumber {
+    width: 100%;
+    flex: 1;
+    height: fit-content;
+    background-color: #BA68C8;
+    border-radius: 5% 5% / 20% 20% 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.roundNumber h1 {
+    position: relative;
+    margin: 0;
+}
+
+.playerChoice {
+    width: 100%;
+    flex: 3;
+    background-color: #00BCD4;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: relative;
+}
+
+.computerChoice {
+    width: 100%;
+    flex: 3;
+    background-color: #009688;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: relative;
+}
+
+.score {
+    width: 100%;
+    flex: 1;
+    background-color: #01579B;
+    border-radius: 0 0 5% 5% / 20% 20% ;
+}
+
+.game .outerCircle {
+    width: 6vw;
+    height: 6vw;
+    top: 0;
+    opacity: 60%;
+}
+.game .innerCircle {
+    width: 5vw;
+    height: 5vw;
+}
+
+.game .outerCircle:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.game img {
+    width: 4vw;
+}
+
+p.choice {
+    font-family: Roboto;
+    font-size: 1.5em;
+    top: 0.2em;
+    margin: 0;
+}
+
+.computerChoice .outerCircle {
+    opacity: 50%;
+}
+
+.computerChoice .outerCircle:hover {
+    cursor: default;
+    opacity: 50%;
+}
+
+.computerChoice .innerCircle {
+    background-color: #B71C1C;
+}
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.scoreText {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextButton {
+    height: 100%;
+    flex: 1;
+    background-color: #78909C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 5% / 20% 0;
 }
