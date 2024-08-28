@@ -20,6 +20,13 @@ document.querySelector(".nRounds h1").onclick = () => switchPage(".nRounds", ".l
 nRoundsInc.onclick = () => updateCount(1);
 nRoundsDec.onclick = () => updateCount(-1);
 
+playerButtons = document.querySelectorAll(".roundResult .playerChoice .buttons .outerCircle");
+computerButtons = document.querySelectorAll(".roundResult .computerChoice .buttons .outerCircle");
+
+for (let i=0;i<3;i++) {
+    playerButtons[i].onclick = () => {playGame(i);};
+}
+
 function switchPage(curr, next) {
     document.querySelector(curr).style.display = "none";
     document.querySelector(next).style.display = "flex";
@@ -50,8 +57,8 @@ function getComputerChoice() {
 
 function updateScore(winner) {
     score = scoreText.innerHTML.split(" ");
-    playerScore = parseInt(score[0]);
-    computerScore = parseInt(score[2]);
+    playerScore = parseInt(score[-3]);
+    computerScore = parseInt(score[-1]);
 
     if (result == 1) {
         playerScore += 1;
