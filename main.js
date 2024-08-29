@@ -40,6 +40,8 @@ playerRockBtn.onclick = () => playGame(0);
 playerPaperBtn.onclick = () => playGame(1);
 playerScissorsBtn.onclick = () => playGame(2);
 
+document.querySelector(".playAgain").onclick = () => {switchPage(".finalResult", ".launch")};
+
 function switchPage(curr, next) {
     document.querySelector(curr).style.display = "none";
     document.querySelector(next).style.display = "flex";
@@ -47,7 +49,21 @@ function switchPage(curr, next) {
 
 function startGame() {
     nRounds = parseInt(roundsText.innerHTML);
+    currRound = 1;
     switchPage(".nRounds", ".game");
+    
+    roundNumberTexts[0].innerHTML = "ROUND " + currRound;
+    roundNumberTexts[1].innerHTML = "ROUND " + currRound;
+
+    scoreTexts[0].innerHTML = "Score : 0 - 0";
+    scoreTexts[1].innerHTML = "Score : 0 - 0";
+
+    for (let i=0;i<3;i++) {
+        playerButtons[i].style.opacity = "60%";
+        computerButtons[i].style.opacity = "50%";
+    }
+
+    document.querySelector("p.next").innerHTML = "Next";
 }
 
 function updateCount(inc) {

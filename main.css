@@ -359,3 +359,17 @@ p.result {
     font-size: 2em;
     font-style: bold;
 }
+
+.playAgain {
+    background-color: #3949AB;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 5% 5% / 20% 20%;
+    opacity: 85%;
+}
+
+.playAgain:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
